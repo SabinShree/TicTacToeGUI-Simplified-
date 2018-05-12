@@ -42,7 +42,7 @@ public class TicTacToeGUI {
         });
         newGameButton.setBackground(Color.GREEN);
         newGameButton.setForeground(Color.BLUE);
-        newGameButton.addActionListener(new ActionListener{
+        newGameButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 res();
@@ -124,21 +124,21 @@ public class TicTacToeGUI {
         frame.setResizable(false);
         resetGame();
     }
-    
+
     public void res() {
-     for (int i = 0; i < 3; i++) {
-                    for (int j = 0; j < 3; j++) {
-                        buttons[i][j].setText("");
-                        buttons[i][j].setEnabled(true);
-                    }
-                }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                buttons[i][j].setText("");
+                buttons[i][j].setEnabled(true);
+            }
+        }
     }
 
     public void resetGame() {
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               res();
+                res();
             }
         });
     }
