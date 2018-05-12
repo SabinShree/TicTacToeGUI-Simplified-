@@ -42,6 +42,12 @@ public class TicTacToeGUI {
         });
         newGameButton.setBackground(Color.GREEN);
         newGameButton.setForeground(Color.BLUE);
+        newGameButton.addActionListener(new ActionListener{
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                res();
+            }
+        });
 
         menuPanel.add(newGameButton, BorderLayout.CENTER);
 
@@ -118,17 +124,21 @@ public class TicTacToeGUI {
         frame.setResizable(false);
         resetGame();
     }
-
-    public void resetGame() {
-        resetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for (int i = 0; i < 3; i++) {
+    
+    public void res() {
+     for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
                         buttons[i][j].setText("");
                         buttons[i][j].setEnabled(true);
                     }
                 }
+    }
+
+    public void resetGame() {
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               res();
             }
         });
     }
@@ -152,7 +162,7 @@ public class TicTacToeGUI {
     }
 
     public boolean checkDiagonalWinner() {
-        if (checkWinner(buttons[0][0].getText(), buttons[1][1].getText(), buttons[2][2].getText()) && (checkWinner(buttons[0][2].getText(), buttons[1][1].getText(), buttons[2][0].getText())))
+        if (checkWinner(buttons[0][0].getText(), buttons[1][1].getText(), buttons[2][2].getText()) || (checkWinner(buttons[0][2].getText(), buttons[1][1].getText(), buttons[2][0].getText())))
             return true;
         else return false;
     }
