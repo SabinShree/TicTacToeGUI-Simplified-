@@ -13,8 +13,8 @@ public class TicTacToeGUI {
     private JButton resetButton;
     private JButton newGameButton;
     private int currentPlayer = 1;
-    private String player1 = "X";
-    private String player2 = "Y";
+    private final String PLAYER_1 = "X";
+    private final String PLAYER_2 = "Y";
 
     public TicTacToeGUI() {
 
@@ -66,7 +66,7 @@ public class TicTacToeGUI {
                             if (e.getSource() == buttons[i1][j1]) {
                                 if (currentPlayer == 1) {
                                     System.out.println("Selected " + currentPlayer);
-                                    buttons[i1][j1].setText(player1);
+                                    buttons[i1][j1].setText(PlAYER_1);
                                     buttons[i1][j1].setFont(new Font("Arial", Font.BOLD, 23));
                                     buttons[i1][j1].setForeground(Color.RED);
                                     buttons[i1][j1].setEnabled(false);
@@ -84,7 +84,7 @@ public class TicTacToeGUI {
 
                                 } else if (currentPlayer == 2) {
                                     if (e.getSource() == buttons[i1][j1]) {
-                                        buttons[i1][j1].setText(player2);
+                                        buttons[i1][j1].setText(PLAYER_2);
                                         System.out.println("Selected " + currentPlayer);
                                         buttons[i1][j1].setFont(new Font("Arial", Font.BOLD + Font.ITALIC, 23));
                                         buttons[i1][j1].setForeground(new Color(70, 150, 120));
@@ -173,9 +173,8 @@ public class TicTacToeGUI {
 
     public static void main(String[] args) {
         new TicTacToeGUI();
-
-
     }
-
-
 }
+/* TO BE ADDED
+*random player, alpha-beta pruning. 
+*/
