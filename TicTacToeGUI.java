@@ -66,7 +66,7 @@ public class TicTacToeGUI {
                             if (e.getSource() == buttons[i1][j1]) {
                                 if (currentPlayer == 1) {
                                     System.out.println("Selected " + currentPlayer);
-                                    buttons[i1][j1].setText(PlAYER_1);
+                                    buttons[i1][j1].setText(PLAYER_1);
                                     buttons[i1][j1].setFont(new Font("Arial", Font.BOLD, 23));
                                     buttons[i1][j1].setForeground(Color.RED);
                                     buttons[i1][j1].setEnabled(false);
