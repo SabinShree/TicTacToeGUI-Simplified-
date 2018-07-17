@@ -72,12 +72,7 @@ public class TicTacToeGUI {
                                     buttons[i1][j1].setEnabled(false);
                                     if (finalWinner()) {
                                         JOptionPane.showMessageDialog(mainPanel, "Game won by Player 1", "Winner", JOptionPane.PLAIN_MESSAGE);
-                                        for (int q = 0; q < 3; q++) {
-                                            for (int jq = 0; jq < 3; jq++) {
-                                                buttons[q][jq].setText("");
-                                                buttons[q][jq].setEnabled(true);
-                                            }
-                                        }
+                                        res();
                                         break;
                                     }
                                     currentPlayer = 2;
@@ -91,12 +86,7 @@ public class TicTacToeGUI {
                                         buttons[i1][j1].setEnabled(false);
                                         if (finalWinner()) {
                                             JOptionPane.showMessageDialog(mainPanel, "Game won by Player 2", "Winner", JOptionPane.PLAIN_MESSAGE);
-                                            for (int q = 0; q < 3; q++) {
-                                                for (int jq = 0; jq < 3; jq++) {
-                                                    buttons[q][jq].setText("");
-                                                    buttons[q][jq].setEnabled(true);
-                                                }
-                                            }
+                                            res();
                                             break;
                                         }
                                         currentPlayer = 1;
